@@ -44,7 +44,7 @@ freopen("factor.out","w",stdout);
 #ifdef LOG
 st = clock();
 #endif
-	scanf("%I64d%I64d",&l,&r);
+	scanf("%lld%lld",&l,&r);
 	memset(ans,0,sizeof ans);
 	init();
 	// for(LL i = l;i <= r;++i)if (!ans[i - l]){
@@ -60,7 +60,7 @@ st = clock();
 	}
 	g(i,0,r - l){
 		if (!ans[i])ans[i] = i + l;
-		printf("%I64d\n",ans[i]);
+		printf("%lld\n",ans[i]);
 	}
 
 
