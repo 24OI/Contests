@@ -4,11 +4,14 @@
 *.pas~
 *.out~
 *.in~
+*.swp
 
 # Contests
-2015/**/src/**/*.in
-2015/**/src/**/*.out
-2015/**/src/**/*.exe
+2015/**/source/**/*.in
+2015/**/source/**/*.out
+2015/**/source/**/*.exe
+2015/**/source/**/*.ans
+2015/**/source/**/a
 
 # Compiled Object files
 *.slo
