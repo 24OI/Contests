@@ -1,4 +1,4 @@
-var a,b:array[1..10000] of longint;
+var a,b:array[1..1000000] of longint;
 n,m,x,y,ans,t,i:longint;
 procedure merge(left,mid,right:longint);
 	var r,l,k:longint;
@@ -52,8 +52,9 @@ a[x]:=a[y];
 a[y]:=t;
 msort(1,n);
 ans:=ans mod 2;
+if ans=1 then ans :=0;
 writeln(ans);
-halt;
+
 if m>=2 then 
 	for i:= 2 to m do 
 	begin
