@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problem type="TRA_0_4" maker="pcdialog">
+    <source dir="field" file="field" code="100">
+        <language cmd="fpc field.pas" file="field.pas"/>
+        <language cmd="g++ -o field field.cpp -lm" file="field.cpp"/>
+        <language cmd="gcc -o field field.c -lm" file="field.c"/>
+    </source>
+    <task output="field.out" input="field.in" io="0" checker="全文比较">
+        <subtask score="10">
+            <point in="field1.in" out="field1.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field2.in" out="field2.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field3.in" out="field3.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field4.in" out="field4.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field5.in" out="field5.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field6.in" out="field6.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field7.in" out="field7.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field8.in" out="field8.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field9.in" out="field9.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="field10.in" out="field10.out" time="1" mem="128"/>
+        </subtask>
+    </task>
+</problem>

@@ -1,0 +1,221 @@
+#include<map>
+#include<cmath>
+#include<cstdio>
+#include<algorithm>
+#define N 1005
+#define ll long long
+using namespace std;
+struct point{ll x,xd,y,yd;};
+bool operator<(point x,point y)
+{
+	if(x.x!=y.x)return x.x<y.x;
+	if(x.xd!=y.xd)return x.xd<y.xd;
+	if(x.y!=y.y)return x.y<y.y;
+	if(x.yd!=y.yd)return x.yd<y.yd;
+	return 0;
+}
+inline ll gcd(ll x,ll y){return y?gcd(y,x%y):x;}
+map<point,int>mp;
+map<point,int>::iterator it;
+int n,A[N],B[N],C[N];
+int main()
+{
+	freopen("star.in","r",stdin);
+	freopen("star.out","w",stdout);
+	scanf("%d",&n);
+	for(int i=1;i<=n;i++)
+	scanf("%d%d%d",&A[i],&B[i],&C[i]);
+	for(int i=1;i<=n;i++)
+	for(int j=i+1;j<=n;j++)
+	{
+		if(A[i]&&A[j]&&B[i]&&B[j])
+		{
+			if((ll)A[i]*B[j]==(ll)A[j]*B[i])continue;
+			ll x=(ll)A[j]*B[i]-(ll)A[i]*B[j];//y
+			ll y=(ll)A[i]*C[j]-(ll)A[j]*C[i];
+			if(x<0)x=-x,y=-y;
+			if(y!=0)
+			{
+				ll t=gcd(x,abs(y));x/=t;y/=t;
+			}
+			else x=1;
+			ll a=(ll)A[i]*B[j]-(ll)A[j]*B[i];//x
+			ll b=(ll)B[i]*C[j]-(ll)B[j]*C[i];
+			if(a<0)a=-a,b=-b;
+			if(b!=0)
+			{
+				ll t=gcd(a,abs(b));a/=t;b/=t;
+			}
+			else a=1;
+			mp[(point){a,b,x,y}]++;
+			continue;
+		}
+		if(A[i]&&A[j])
+		{
+			if(!B[i]&&!B[j])continue;
+			if(!B[i])
+			{
+				ll a=A[i];ll b=-C[i];
+				if(a<0)b=-b,a=-a;
+				if(b!=0)
+				{
+					ll t=gcd(a,abs(b));a/=t;b/=t;
+				}
+				else a=1;
+				ll x=(ll)B[j]*A[i];
+				ll y=(ll)A[j]*C[i]-(ll)A[i]*C[j];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+				mp[(point){a,b,x,y}]++;
+			}
+			else
+			{
+				ll a=A[j];ll b=-C[j];
+				if(a<0)b=-b,a=-a;
+				if(b!=0)
+				{
+					ll t=gcd(a,abs(b));a/=t;b/=t;
+				}
+				else a=1;
+				ll x=(ll)B[i]*A[j];
+				ll y=(ll)A[i]*C[j]-(ll)A[j]*C[i];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+				mp[(point){a,b,x,y}]++;
+			}
+			continue;
+		}
+		if(B[i]&&B[j])
+		{
+			if(!A[i]&&!A[j])continue;
+			if(!A[i])
+			{
+				ll a=B[i];ll b=-C[i];
+				if(a<0)b=-b,a=-a;
+				if(b!=0)
+				{
+					ll t=gcd(a,abs(b));a/=t;b/=t;
+				}
+				else a=1;
+				ll x=(ll)A[j]*B[i];
+				ll y=(ll)B[j]*C[i]-(ll)B[i]*C[j];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+				mp[(point){x,y,a,b}]++;
+			}
+			else
+			{
+				ll a=B[j];ll b=-C[j];
+				if(a<0)b=-b,a=-a;
+				if(b!=0)
+				{
+					ll t=gcd(a,abs(b));a/=t;b/=t;
+				}
+				else a=1;
+				ll x=(ll)A[i]*B[j];
+				ll y=(ll)B[i]*C[j]-(ll)B[j]*C[i];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+				mp[(point){x,y,a,b}]++;
+			}
+			continue;
+		}
+		if(!A[i])
+		{
+			if(!A[j])continue;
+			ll a=A[j];ll b=-C[j];
+			if(a<0)a=-a,b=-b;
+			if(b!=0)
+			{
+				ll t=gcd(a,abs(b));a/=t;b/=t;
+			}
+			else a=1;
+			ll x,y;
+			if(!B[i])
+			{
+				if(!B[j])continue;
+				x=B[j];y=-C[j];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+			}
+			else
+			{
+				if(!B[i])continue;
+				x=B[i];y=-C[i];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+			}
+			mp[(point){a,b,x,y}]++;
+			continue;
+		}
+		if(!A[j])
+		{
+			if(!A[i])continue;
+			ll a=A[i];ll b=-C[i];
+			if(a<0)a=-a,b=-b;
+			if(b!=0)
+			{
+				ll t=gcd(a,abs(b));a/=t;b/=t;
+			}
+			else a=1;
+			ll x,y;
+			if(!B[i])
+			{
+				if(!B[j])continue;
+				x=B[j];y=-C[j];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+			}
+			else
+			{
+				if(!B[i])continue;
+				x=B[i];y=-C[i];
+				if(x<0)x=-x,y=-y;
+				if(y!=0)
+				{
+					ll t=gcd(x,abs(y));x/=t;y/=t;
+				}
+				else x=1;
+			}
+			mp[(point){a,b,x,y}]++;
+			continue;
+		}
+	}
+	int ans=0,sum=0;
+	for(it=mp.begin();it!=mp.end();it++)
+	{
+		if(it->second>ans)ans=it->second,sum=1;
+		else if(it->second==ans)sum++;
+	}
+	ans=sqrt(8*ans+1);
+	ans=(ans+1)/2;
+	printf("%d %d",ans,sum);
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problem type="TRA_0_4" maker="pcdialog">
+    <source dir="bagua" file="bagua" code="100">
+        <language cmd="fpc bagua.pas" file="bagua.pas"/>
+        <language cmd="g++ -o bagua bagua.cpp -lm" file="bagua.cpp"/>
+        <language cmd="gcc -o bagua bagua.c -lm" file="bagua.c"/>
+    </source>
+    <task output="bagua.out" input="bagua.in" io="0" checker="全文比较">
+        <subtask score="10">
+            <point in="bagua1.in" out="bagua1.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua2.in" out="bagua2.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua3.in" out="bagua3.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua4.in" out="bagua4.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua5.in" out="bagua5.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua6.in" out="bagua6.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua7.in" out="bagua7.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua8.in" out="bagua8.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua9.in" out="bagua9.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="10">
+            <point in="bagua10.in" out="bagua10.out" time="1" mem="128"/>
+        </subtask>
+    </task>
+</problem>

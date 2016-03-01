@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<problem type="TRA_0_4" maker="pcdialog">
+    <source dir="idioms" file="idioms" code="100">
+        <language cmd="fpc idioms.pas" file="idioms.pas"/>
+        <language cmd="g++ -o idioms idioms.cpp -lm" file="idioms.cpp"/>
+        <language cmd="gcc -o idioms idioms.c -lm" file="idioms.c"/>
+    </source>
+    <task output="idioms.out" input="idioms.in" io="0" checker="全文比较">
+        <subtask score="5">
+            <point in="idioms1.in" out="idioms1.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms2.in" out="idioms2.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms3.in" out="idioms3.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms4.in" out="idioms4.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms5.in" out="idioms5.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms6.in" out="idioms6.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms7.in" out="idioms7.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms8.in" out="idioms8.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms9.in" out="idioms9.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms10.in" out="idioms10.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms11.in" out="idioms11.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms12.in" out="idioms12.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms13.in" out="idioms13.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms14.in" out="idioms14.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms15.in" out="idioms15.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms16.in" out="idioms16.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms17.in" out="idioms17.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms18.in" out="idioms18.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms19.in" out="idioms19.out" time="1" mem="128"/>
+        </subtask>
+        <subtask score="5">
+            <point in="idioms20.in" out="idioms20.out" time="1" mem="128"/>
+        </subtask>
+    </task>
+</problem>

@@ -1,7 +1,7 @@
 type node = record
 	l,r,u,d,max:longint;
 	end;
-var tree:array[1..15000000]of node;
+var tree:array[1..25000000]of node;
 a:array[1..3000,1..3000]of longint;
 dist:array[1..3000]of longint;
 
